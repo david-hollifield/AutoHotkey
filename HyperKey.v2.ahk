@@ -43,8 +43,14 @@ Hotkey "~Capslock & k", SendUp
 Hotkey "~Capslock & j", SendDown
 
 ;; popular hotkeys with hyper
-Hotkey "~Capslock & c", SendCtrlC
-Hotkey "~Capslock & v", SendCtrlV
+;;Hotkey "~Capslock & c", SendCtrlC
+;;Hotkey "~Capslock & v", SendCtrlV
+
+Hotkey "~Capslock & F1", SendToDesktop1
+Hotkey "~Capslock & F2", SendToDesktop2
+Hotkey "~Capslock & F3", SendToDesktop3
+Hotkey "~Capslock & F4", SendToDesktop4
+Hotkey "~Capslock & F5", SendToDesktop5
 
 SendLeft(ThisHotkey) {
     Send("{Left}")
@@ -68,4 +74,29 @@ SendCtrlC(ThisHotkey) {
 
 SendCtrlV(ThisHotkey) {
     Send("^v")
+}
+
+SendToDesktop(desktop) {
+    Send "#+!{F" desktop "}"
+    Send "#+!{" desktop "}"
+}
+
+SendToDesktop1(ThisHotkey) {
+    SendToDesktop("1")
+}
+
+SendToDesktop2(ThisHotkey) {
+    SendToDesktop("2")
+}
+
+SendToDesktop3(ThisHotkey) {
+    SendToDesktop("3")
+}
+
+SendToDesktop4(ThisHotkey) {
+    SendToDesktop("4")
+}
+
+SendToDesktop5(ThisHotkey) {
+    SendToDesktop("5")
 }
